@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 👨‍💼 [Headshot AI](https://headshots-starter.vercel.app/) - Professional Headshots with AI
 
 Introducing Headshot AI, an open-source project from [Leap AI](https://tryleap.ai/) that generates Professional AI Headshots in minutes.
@@ -230,3 +231,6 @@ If you want to contribute to the codebase make sure you create a new branch and 
 ## License
 
 Headshot AI is released under the [MIT License](https://choosealicense.com/licenses/mit/).
+=======
+test
+>>>>>>> 100d40fb98e106ee069e11e8d829d6830c861ad5
