@@ -6,6 +6,9 @@ export default function PricingSection() {
     <div className="w-full max-w-6xl mt-16 mb-16 p-8 rounded-lg space-y-8">
       <h2 className="text-3xl font-bold text-center mb-8">Pricing</h2>
       <div className="flex flex-wrap justify-center lg:space-x-4 space-y-4 lg:space-y-0 items-stretch">
+        {/* 
+        pricingOptions is defined as an array of objects at the end, see for yourself.
+        */}
         {pricingOptions.map((option, index) => (
           <div
             key={index}
@@ -13,10 +16,14 @@ export default function PricingSection() {
           >
             <div className="flex-grow space-y-4">
               <h3 className="text-2xl font-semibold text-center">
+                {/*  */}
                 {option.title}
+                {/*  */}
               </h3>
               <p className="text-xl font-bold text-center mb-2">
+                {/*  */}
                 {option.price}
+                {/*  */}
               </p>
               <p className="text-sm text-gray-600 text-center">
                 {option.description}
@@ -31,6 +38,7 @@ export default function PricingSection() {
               </ul>
             </div>
             <div className="mt-10 text-center">
+              {/* LOGIN ROUTE CLICK. */}
               <Link href="/login">
                 {" "}
                 <Button className="w-3/4">{option.buttonText}</Button>
@@ -49,9 +57,7 @@ const pricingOptions = [
     price: "1 Credit",
     description:
       "Perfect for individuals looking to enhance their online presence.",
-    features: [
-      "4 AI Headshots",
-    ],
+    features: ["4 AI Headshots"],
     buttonText: "Choose Starter",
     bgColor: "bg-white",
   },
@@ -60,9 +66,7 @@ const pricingOptions = [
     price: "3 Credits",
     description:
       "Ideal for professionals requiring frequent updates to their profiles.",
-    features: [
-      "12 AI Headshots",
-    ],
+    features: ["12 AI Headshots"],
     buttonText: "Choose Basic",
     bgColor: "bg-blue-50",
   },
@@ -70,9 +74,7 @@ const pricingOptions = [
     title: "Premium",
     price: "5 Credits",
     description: "The best value with unlimited possibilities.",
-    features: [
-      "20 AI Headshots",
-    ],
+    features: ["20 AI Headshots"],
     buttonText: "Choose Premium",
     bgColor: "bg-white",
   },

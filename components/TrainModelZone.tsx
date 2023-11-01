@@ -43,7 +43,7 @@ export default function TrainModelZone() {
 
   const onSubmit: SubmitHandler<FormInput> = () => {
     trainModel();
-  }
+  };
 
   const onDrop = useCallback(
     async (acceptedFiles: File[]) => {
@@ -127,16 +127,16 @@ export default function TrainModelZone() {
       const messageWithButton = (
         <div className="flex flex-col gap-4">
           {responseMessage}
-          <a href="/get-credits" >
-            <Button size="sm">
-              Get Credits
-            </Button>
+          <a href="/get-credits">
+            <Button size="sm">Get Credits</Button>
           </a>
         </div>
       );
       toast({
         title: "Something went wrong!",
-        description: responseMessage.includes("Not enough credits") ? messageWithButton : responseMessage,
+        description: responseMessage.includes("Not enough credits")
+          ? messageWithButton
+          : responseMessage,
         duration: 5000,
       });
       return;
@@ -260,8 +260,10 @@ export default function TrainModelZone() {
               Upload 4-10 images of the person you want to generate headshots
               for.
             </FormDescription>
+
             <div className="outline-dashed outline-2 outline-gray-100 hover:outline-blue-500 w-full h-full rounded-md p-4 flex justify-center align-middle">
               <input {...getInputProps()} />
+
               {isDragActive ? (
                 <p className="self-center">Drop the files here ...</p>
               ) : (
@@ -274,6 +276,7 @@ export default function TrainModelZone() {
               )}
             </div>
           </div>
+
           {files.length > 0 && (
             <div className="flex flex-row gap-4 flex-wrap">
               {files.map((file) => (
@@ -296,7 +299,8 @@ export default function TrainModelZone() {
           )}
 
           <Button type="submit" className="w-full" isLoading={isLoading}>
-            Train Model {stripeIsConfigured && <span className="ml-1">(1 Credit)</span>}
+            Train Model{" "}
+            {stripeIsConfigured && <span className="ml-1">(1 Credit)</span>}
           </Button>
         </form>
       </Form>

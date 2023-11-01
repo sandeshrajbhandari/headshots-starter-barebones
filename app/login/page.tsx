@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+// NOTHING MUCH. just simple shadcdn ui component imports.
 
 export const dynamic = "force-dynamic";
 
@@ -18,6 +19,7 @@ export default async function Login() {
       <form
         className="flex-1 flex flex-col w-full justify-center gap-2 "
         action="/auth/sign-in"
+        //sends the form data to /auth/sign-in route for signing in.
         method="post"
       >
         <Card>

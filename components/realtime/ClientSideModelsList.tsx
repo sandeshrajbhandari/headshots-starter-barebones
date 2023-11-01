@@ -57,19 +57,19 @@ export default function ClientSideModelsList({
 
   return (
     <div id="train-model-container" className="w-full">
+      {/* if models exist and model length is greater than zero. */}
       {models && models.length > 0 && (
         <div className="flex flex-col gap-4">
           <div className="flex flex-row gap-4 w-full justify-between items-center text-center">
             <h1>Your models</h1>
             <Link href="/overview/models/train" className="w-fit">
-              <Button size={"sm"}>
-                Train model
-              </Button>
+              <Button size={"sm"}>Train model</Button>
             </Link>
           </div>
           <ModelsTable models={models} />
         </div>
       )}
+      {/* if there is no model trained i.e. a new user then no need to show old models. */}
       {models && models.length === 0 && (
         <div className="flex flex-col gap-4 items-center">
           <FaImages size={64} className="text-gray-500" />

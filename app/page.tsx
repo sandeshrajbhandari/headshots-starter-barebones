@@ -13,19 +13,22 @@ export const dynamic = "force-dynamic";
 
 export default async function Index() {
   const supabase = createServerComponentClient({ cookies });
+  console.log(supabase);
 
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
+  // if user is signed in redirect to overview page or dashboard to generate images.
   if (user) {
     return redirect("/overview");
   }
 
   return (
-    <div className="flex flex-col items-center pt-16">
-      <div className="flex flex-col lg:flex-row items-center gap-8 p-8 max-w-6xl w-full">
+    <div className="flex flex-col items-center">
+      <div className="flex flex-col lg:flex-row items-center gap-4 p-8 max-w-6xl w-full">
         <div className="flex flex-col space-y-4 lg:w-1/2 w-full">
+          <pre>HERO SECTION. This only has a CTA that makes user login.</pre>
           <h1 className="text-5xl font-bold">
             Professional AI Headshots in minutes.
           </h1>
@@ -56,7 +59,11 @@ export default async function Index() {
           />
         </div>
       </div>
-      <ExplainerSection />
+      <div>
+        <pre className="border-4 p-2">
+          I REMOVED THE EXPLAINER SECTION COMPONENT FOR BREVITY
+        </pre>
+      </div>
       <PricingSection />
     </div>
   );
